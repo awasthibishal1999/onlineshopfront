@@ -1,0 +1,147 @@
+<div id="login">
+    <h3 class="text-center text-white pt-5">Login form</h3>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form #RegisterForm ="ngForm" (ngsubmit)="registerUser()">
+                      
+                        <small class="text-danger">{{msg}}</small>
+                        <h3 class="text-center text-info">Registration</h3>
+                        <div class="form-group">
+                            <label for="email" class="text-info">Email</label><br>
+                            <input type="text" name="email"  class="form-control" [(ngModel)]="user.emailId" 
+                            required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+                            #email="ngModel"
+                            [class.is-invalid]="email.invalid && email.touched">
+
+                            <div *ngIf="email.errors && (email.invalid && email.touched)">
+                                <small class="text-danger" *ngIf="email.errors.required">Email Id is required feild.</small>
+                                <small class="text-danger" *ngIf="email.errors.pattern">Please enter valid Email Id.</small>
+                            </div>
+                            
+                          
+                           
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="text-info">User Name:</label><br>
+                            <input type="text" name="name"  class="form-control" [(ngModel)]="user.userName" required #userName="ngModel" 
+                            [class.is-invalid]="userName.invalid && userName.touched">
+                            <small class="text-danger"[class.d-none]="userName.valid || userName.untouched">Password is required field</small>
+                          
+                           
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-info">Password:</label><br>
+                            <input type="password" name="password"  class="form-control"  [(ngModel)]="user.password" required #password="ngModel" 
+                            [class.is-invalid]="password.invalid && password.touched">
+                            <small class="text-danger"[class.d-none]="password.valid || password.untouched">Password is required field</small>
+                            
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-info">Confirm Password:</label><br>
+                            <input type="password" name="cpassword"  class="form-control" #cpassword ="ngModel" [(ngModel)]="user.password" required
+                            [class.is-invalid]="cpassword.invalid && cpassword.touched">
+                            <small class="text-danger"[class.d-none]="cpassword.value == password.value || cpassword.untouched">Password is required field</small>
+                            
+                        </div>
+                        <div class="form-group">
+                            <button [disabled]="RegisterForm.form.invalid" type="submit" class="btn btn-info">Sign Up</button>
+                            
+                        </div>
+                        <div id="register-link" class="text-right">
+                            <a class="text-info"routerLink="/login" routerLinkActive="active-link" target="_self">Existing User? Login here</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+  
+       <p> <strong>Register---Form</strong></p>
+       
+       <div class="row ">
+       
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-4">
+                          <label class="firstname">First Name :</label> </div>
+                    <div class="col-xs-8">
+                        <input type="text" name="fname" id="fname" placeholder="Enter your First Name" class="form-control ">
+                </div>
+                 </div>
+            </div>
+            
+            
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <label class="lastname">Last Name :</label></div>
+                   <div class ="col-xs-8">	 
+                        <input type="text" name="lname" id="lname" placeholder="Enter your Last Name" class="form-control last">
+                   </div>
+                </div>
+            </div>
+      
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <label class="mail" >Email :</label></div>
+                    <div class="col-xs-8"	>	 
+                         <input type="email" name="email"  id="email"placeholder="Enter your email" class="form-control" >
+                    </div>
+                </div>
+            </div>
+        
+             <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-xs-4">
+                              <label class="pass">Password :</label></div>
+                     <div class="col-xs-8">
+                            <input type="password" name="password" id="password" placeholder="Enter your Password" class="form-control">
+                    </div>
+             </div>
+             </div>
+             <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-4">
+                          <label class="pass">Confirm Password :</label></div>
+                 <div class="col-xs-8">
+                        <input type="password" name="password" id="password" placeholder="Enter your Password" class="form-control">
+                </div>
+         </div>
+         </div>
+         
+             
+  
+            <div class="col-sm-12">
+              
+                <div class="col-sm-12">
+                    <div class="btn btn-warning">Submit</div>
+              </div>
+            </div>
+        </div>	 
+                     
+            
+   </div> -->

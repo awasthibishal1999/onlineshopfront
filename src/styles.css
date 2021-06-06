@@ -1,0 +1,50 @@
+
+
+.slide-image{
+  width: 0%;
+  padding-top: 0px;
+}
+
+ .carousel-holder{
+  margin-bottom: 30px;
+}
+.carousel-control,
+.item{
+  border-radius: 4px;
+} 
+.caption{
+  height: 130px;
+  overflow: hidden;
+}
+.caption h4 {
+  white-space: nowrap;
+}
+.thumbnail img{
+  width: 100%;
+}
+.ratings {
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #d17581;
+}
+.thumbnail {
+  padding: 0;
+}
+.thumbnail .caption-full {
+  padding: 9px;
+  color: #333;
+}
+  
+
+/* .footer{
+  margin: 50px 0;
+} */
+
+table {
+  width: 80%;
+
+}
+a, .pointer{
+  cursor: pointer;
+}
+

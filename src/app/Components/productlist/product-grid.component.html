@@ -1,0 +1,79 @@
+ <div class="row">
+        <div  class="col-lg-3">
+           <app-product-category></app-product-category>
+        </div>
+         <!-- Header-->
+         <div class="col-lg-9">
+         <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 style="font-family:'Courier New'" class="display-4 fw-bolder"><i style="color:blue" class="fa fa-fighter-jet" aria-hidden="true"></i>Shop in style</h1>
+                    <p class="lead fw-normal text-white-50 mb-0"><i style="color:brown"  class="fa fa-shopping-basket" aria-hidden="true"></i>
+                        Nepal's No.1 Shopping Portal</p>
+                </div>
+            </div>
+        </header>
+           <!-- Section-->
+           <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                  
+                <div class="col mb-5" *ngFor="let product of products">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <a routerLink="/products/{{product.id}}"><img [src]="product.imageUrl" alt="..." /></a>
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder"><a routerLink="/products/{{product.id}}">{{product?.name}}</a></h5>
+                                   
+                                    <!-- Product price-->
+                                    <h6>{{product.unitPrice |  currency: 'INR':true}}</h6> 
+                                  
+                                </div>
+                            </div>
+                          
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="addToCart(product)">Add to cart</a></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    </section>
+         
+            <!-- <p style="font-size: larger;"><strong>Our Products</strong></p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
+                    <div class="card h-100">
+                        <div class="card-body">
+                          <a routerLink="/products/{{product.id}}" ><img class="card-img-top img-responsive" [src]="product.imageUrl"/></a>
+
+                            <h4 class="card-title"><a routerLink="/products/{{product.id}}">{{product?.name}}</a></h4>
+                            <h5>{{product.unitPrice}}</h5>
+                            <p class="card-text">{{product.description}}</p>
+                           
+                        </div>
+                        <div class="card-footer"><small class="text-muted">★ ★ ★ ★ ☆</small></div>
+                    </div>
+                    
+                </div>
+                <div *ngIf="products?.length==0" class="col-md-12 alert alert-warning mt-3">
+                    No Products Found.
+                </div>
+               </div> -->
+
+               
+            </div>
+            <!-- <jw-pagination [items]="products" (changePage)="pageClick($event)"
+            (changePage)="pageClick($event)"
+            [pageSize]="pageSize"></jw-pagination> -->
+        </div>
+        
+    
+    
